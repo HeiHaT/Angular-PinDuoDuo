@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {
     ImageSliderComponent,
     ScrollableTabComponent,
-    HorizontalGridComponent
+    HorizontalGridComponent,
 } from './components';
 
 

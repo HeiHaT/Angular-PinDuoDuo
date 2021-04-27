@@ -4,10 +4,9 @@ import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HomeContainerComponent } from '.';
 
-
 @NgModule({
   declarations: [
-    HomeContainerComponent
+    HomeContainerComponent,
   ],
   imports: [
     SharedModule,

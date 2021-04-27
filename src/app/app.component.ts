@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ImageSlider, ImageSliderComponent, TopMenu } from './shared/components';
+import { Channel, ImageSlider, ImageSliderComponent, TopMenu } from './shared/components';
 
 
 
@@ -98,6 +98,98 @@ export class AppComponent {
         link: '',
         caption: ''
        },
+    ];
+    channels: Channel[] = [
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/brand.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '清仓处理',
+        icon: '../../../../assets/icons/cashback.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '欢迎抢购',
+        icon: '../../../../assets/icons/fav_store.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/membership.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/friends.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/history.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/more.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/brand.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/friends.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/history.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/more.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/friends.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/history.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/friends.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/history.png' ,
+        link : 'hot'
+      },
     ];
     // tslint:disable-next-line:typedef
     handleTabSelected(topMenus: TopMenu){

@@ -12,4 +12,14 @@
     #imageSlider
 ></app-image-slider>
 
-<app-horizontal-grid></app-horizontal-grid>
+<app-horizontal-grid>
+    <span appGridItem *ngFor="let item of channels">
+        <img
+        [src]="item.icon"
+        alt=""
+        [appGridItemImage]="'3.5rem'"
+        >
+        <span [appGridItemTitle]="'1rem'">{{item.title}}</span>
+    </span>
+</app-horizontal-grid>
+<!-- <router-outlet></router-outlet> -->

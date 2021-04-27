@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Confirmable, Emoji } from '../decorators';
+import { Component, Input, OnInit } from '@angular/core';
+import { Confirmable, Emoji } from '../../decorators';
+
+export interface Channel {
+  id: number;
+  icon: string;
+  title: string;
+  link: string;
+}
+
 
 @Component({
   selector: 'app-horizontal-grid',
@@ -8,6 +16,9 @@ import { Confirmable, Emoji } from '../decorators';
 })
 export class HorizontalGridComponent implements OnInit {
 
+  @Input() cols = 8;
+  @Input() dispalyCols = 5;
+  sliderMargin = '0';
 
   // 自己添加的注解 文件在decorators
   @Emoji() result = 'Mao Lin';
@@ -22,5 +33,21 @@ export class HorizontalGridComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public get scrollable(): boolean {
+    return this.cols > this.dispalyCols;
+  }
+
+  public get templateRows(): string {
+    return  `minmax(auto, max-content)`;
+  }
+  public get templateColumns(): string {
+       return  `repeat(${this.cols}, calc((100vw - ${this.dispalyCols * 0.4}rem)/
+       ${this.dispalyCols}))`;
+  }
+
+  // tslint:disable-next-line:typedef
+  handleScroll(event){
+     this.sliderMargin = `0 ${100 * event.target.scrollLeft / event.target.scrollWidht}%`;
+  }
 }
 

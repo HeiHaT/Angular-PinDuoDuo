@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ImageSliderComponent, TopMenu } from 'src/app/shared';
+import { Channel, ImageSlider, ImageSliderComponent, TopMenu } from 'src/app/shared';
 
 @Component({
   selector: 'app-home-container',
@@ -68,13 +68,137 @@ export class HomeContainerComponent implements OnInit {
       link: ''
     }
   ];
-  // tslint:disable-next-line:typedef
-  handleTabSelected(topMenus: TopMenu){
-    const colors = ['green', 'blue', 'black', 'red', 'pink'];
-    const idx = Math.floor(Math.random() * 5);
-    this.scrollableTabagColor = colors[idx];
-    console.log(topMenus);
-  }
+    color: 'red';
+    sliders: ImageSlider[] = [
+      {
+       imgUrl: '../assets/images/1.jpg',
+       link: '',
+       caption: ''
+      },
+      {
+        imgUrl: '../assets/images/2.jpg',
+        link: '',
+        caption: ''
+       },
+       {
+        imgUrl: '../assets/images/3.jpg',
+        link: '',
+        caption: ''
+       },
+       {
+        imgUrl: '../assets/images/4.jpg',
+        link: '',
+        caption: ''
+       },
+       {
+        imgUrl: '../assets/images/5.jpg',
+        link: '',
+        caption: ''
+       },
+    ];
+    channels: Channel[] = [
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/brand.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '清仓处理',
+        icon: '../../../../assets/icons/cashback.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '欢迎抢购',
+        icon: '../../../../assets/icons/fav_store.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/membership.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/friends.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/history.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/more.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/brand.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/friends.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/history.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/more.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/friends.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/history.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/friends.png' ,
+        link : 'hot'
+      },
+      {
+        id: 1,
+        title: '限时秒杀',
+        icon: '../../../../assets/icons/history.png' ,
+        link : 'hot'
+      },
+    ];
+    // tslint:disable-next-line:typedef
+    handleTabSelected(topMenus: TopMenu){
+      const colors = ['green', 'blue', 'black', 'red', 'pink'];
+      const idx = Math.floor(Math.random() * 5);
+      this.scrollableTabagColor = colors[idx];
+      console.log(topMenus);
+    }
+    // tslint:disable-next-line:use-lifecycle-interface
+    ngAfterViewInit(): void {
+     console.log('ngAfterViewInit', this.imageSlider);
+    }
   ngOnInit(): void{
   }
 

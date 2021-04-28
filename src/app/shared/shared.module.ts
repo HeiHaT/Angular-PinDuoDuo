@@ -25,7 +25,6 @@ import {
   ],
   imports: [
     CommonModule
-    // FormsModule
   ],
   exports: [
     CommonModule,

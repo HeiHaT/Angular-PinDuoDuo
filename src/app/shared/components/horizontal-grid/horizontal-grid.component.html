@@ -2,21 +2,8 @@
 <button (click)="handleClick()">点击执行</button> -->
 <!-- 上面代码演示的是注解 -->
 
-<!-- <div appGridItem *ngFor="let item of channels">
-    <img
-    [src]="item.icon"
-    alt=""
-    [appGridItemImage]="'4rem'"
-    >
-    <span appGridItemTitle="'1rem'">{{item.title}}</span>
-</div> -->
-
-
 <div class="container"
-  [ngStyle]="{
-      'grid-template-rows': templateRows,
-      'grid-template-columns': templateColumns
-    }"
+  [ngStyle]="{'grid-template-rows': templateRows,'grid-template-columns': templateColumns}"
     (scroll)= "handleScroll($event)"
     >
     <ng-content select="[appGridItem]"></ng-content>

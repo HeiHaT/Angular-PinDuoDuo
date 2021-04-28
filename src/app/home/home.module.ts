@@ -1,28 +1,17 @@
 import { NgModule } from '@angular/core';
-// import { GridItemDirective,
-//    GridItemImageDirective,
-//     GridItemTitleDirective,
-//      HorizontalGridComponent,
-//       ImageSliderComponent,
-//        ScrollableTabComponent } from '../shared';
-
-// import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { HomeContainerComponent } from './components';
+import { HomeContainerComponent, HomeDetailComponent } from './components';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 @NgModule({
   declarations: [
     HomeContainerComponent,
-    // ImageSliderComponent,
-    // ScrollableTabComponent,
-    // HorizontalGridComponent,
-    // GridItemDirective,
-    // GridItemImageDirective,
-    // GridItemTitleDirective,
+    HomeDetailComponent,
   ],
   imports: [
     SharedModule,
+    HomeRoutingModule
   ]
 })
 export class HomeModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Channel, ImageSlider } from 'src/app/shared';
+import { ActivatedRoute } from '_@angular_router@11.2.11@@angular/router';
 
 @Component({
   selector: 'app-home-detail',
@@ -8,7 +9,8 @@ import { Channel, ImageSlider } from 'src/app/shared';
 })
 export class HomeDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
+  selectedTabLink;
   sliders: ImageSlider[] = [
     {
      imgUrl: '../assets/images/1.jpg',
@@ -135,6 +137,10 @@ export class HomeDetailComponent implements OnInit {
     }
   ];
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+     this.selectedTabLink = params.get('tablink');
+     console.log(params.get('tablink'));
+    });
   }
 
 }

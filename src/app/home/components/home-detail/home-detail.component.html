@@ -1,4 +1,4 @@
-<app-image-slider
+<!-- <app-image-slider
     [sliders] = "sliders"
     #imageSlider
 ></app-image-slider>
@@ -12,4 +12,21 @@
         >
         <span [appGridItemTitle]="'1rem'">{{item.title}}</span>
     </span>
+</app-horizontal-grid> -->
+
+<div *ngIf= "selectedTabLink ==='hot' else other">
+<app-image-slider [sliders] = "sliders" #imageSlider></app-image-slider>
+<app-horizontal-grid>
+    <span appGridItem *ngFor="let item of channels">
+        <img
+        [src]="item.icon"
+        alt=""
+        [appGridItemImage]="'3.5rem'"
+        >
+        <span [appGridItemTitle]="'1rem'">{{item.title}}</span>
+    </span>
 </app-horizontal-grid>
+</div>
+<ng-template #other>
+    This page hasn't been written yet
+</ng-template>

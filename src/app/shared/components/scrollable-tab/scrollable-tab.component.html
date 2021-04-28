@@ -2,7 +2,7 @@
 
 <ul [ngStyle]="{ 'background-color': backgroundColor }">
     <li *ngFor="let item of menus;let i = index">
-        <a href="#"
+        <a
         (click)="handleSelection(i)"
         [ngStyle]="{ color: i === selectIndex ? potforColor : titlecolor }"
         >

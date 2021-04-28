@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ImageSliderComponent, TopMenu } from 'src/app/shared';
+import { Router } from '_@angular_router@11.2.11@@angular/router';
 
 @Component({
   selector: 'app-home-container',
@@ -8,64 +9,88 @@ import { ImageSliderComponent, TopMenu } from 'src/app/shared';
 })
 export class HomeContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   @ViewChild('imageSlider') imageSlider: ImageSliderComponent;
   scrollableTabagColor = 'red';
   topMenus: TopMenu[] = [{
     title: '热门',
-    link: ''
+    link: 'hot',
+    id: 1
     },
     {
       title: '男装',
-      link: ''
+      link: 'men',
+       id: 2
     },
     {
       title: '百货',
-      link: ''
+      link: 'department',
+      id: 3
     },
     {
       title: '运动',
-      link: ''
+      link: 'sports',
+      id: 4
     },
     {
       title: '手机',
-      link: ''
+      link: 'mobile',
+      id: 5
     },
     {
       title: '家访',
-      link: ''
+      link: 'textile',
+      id: 6
     },
     {
       title: '食品',
-      link: ''
+      link: 'food',
+      id: 7
     },
     {
       title: '电器',
-      link: ''
+      link: 'hot',
+      id: 8
     },
     {
       title: '鞋包',
-      link: ''
+      link: 'wallet',
+      id: 9
     },
     {
       title: '汽车',
-      link: ''
+      link: 'hot',
+      id: 10
     },
     {
       title: '食品',
-      link: ''
+      link: 'hot',
+      id: 11
     },
     {
       title: '电器',
-      link: ''
+      link: 'hot',
+      id: 12
     },
     {
-      title: '鞋包',
-      link: ''
+      title: '内衣',
+      link: 'underwears',
+      id: 13
     },
     {
-      title: '汽车',
-      link: ''
+      title: '家装',
+      link: 'home',
+       id: 14
+    },
+    {
+      title: '母婴',
+      link: 'baby',
+       id: 15
+    },
+    {
+      title: '美妆',
+      link: 'makeup',
+       id: 16
     }
   ];
     color: 'red';
@@ -75,6 +100,8 @@ export class HomeContainerComponent implements OnInit {
       const idx = Math.floor(Math.random() * 5);
       this.scrollableTabagColor = colors[idx];
       console.log(topMenus);
+      // 跳转
+      this.router.navigate(['home', topMenus.link]);
     }
     // tslint:disable-next-line:use-lifecycle-interface
     ngAfterViewInit(): void {

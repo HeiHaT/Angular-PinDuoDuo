@@ -4,6 +4,7 @@ import { AfterContentInit, Component, EventEmitter, Input, OnChanges, OnDestroy,
 export interface TopMenu {
   title: string;
   link: string;
+  id: number;
 }
 
 @Component({

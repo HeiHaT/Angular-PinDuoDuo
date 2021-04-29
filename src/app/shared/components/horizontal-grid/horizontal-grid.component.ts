@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Confirmable, Emoji } from '../../decorators';
 
 export interface Channel {
@@ -12,7 +12,9 @@ export interface Channel {
 @Component({
   selector: 'app-horizontal-grid',
   templateUrl: './horizontal-grid.component.html',
-  styleUrls: ['./horizontal-grid.component.css']
+  styleUrls: ['./horizontal-grid.component.css'],
+  // 脏值检测  定义在某个组件里面,只会跑对呀的数 检测自己模块的
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HorizontalGridComponent implements OnInit {
 

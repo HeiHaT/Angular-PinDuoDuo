@@ -28,12 +28,11 @@ export class HomeGrandComponent implements OnInit {
    price: number;
    data: [1, 2, 3, 4, 5];
    constructor() { }
-
+   date: Date;
   ngOnInit(): void {
     this.price = 123.025;
     // Datanew Data()不能用
-    // this.data = this.minusDays(new Data() -60)
-
+    this.date = this.minusDays(new Date(), 1);
     // 注解 默认情况下只有一份
     // 字符串容易冲突 可以写个token
     const token = new  InjectionToken<string>('baseUrl');
@@ -63,10 +62,9 @@ export class HomeGrandComponent implements OnInit {
     console.log(injector.get(token));
   }
   // tslint:disable-next-line:typedef
-  // new Data() 不能用
-  // minusDays(data: Data, days: number){
-  //   const result = new Data(data);
-  //   result.setData(result.getData() - days);
-  //   return result;
-  // }
+  minusDays(date: Data, days: number){
+    const result = new Date();
+    result.setDate(result.getDate() - days);
+    return result;
+  }
 }

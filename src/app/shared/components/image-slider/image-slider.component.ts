@@ -1,4 +1,14 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import {
+        AfterViewInit,
+        ChangeDetectionStrategy,
+        Component, ElementRef,
+        Input,
+        OnInit,
+        QueryList,
+        Renderer2,
+        ViewChild,
+        ViewChildren
+        } from '@angular/core';
 
 export interface ImageSlider {
   imgUrl: string;
@@ -10,7 +20,9 @@ export interface ImageSlider {
 @Component({
   selector: 'app-image-slider',
   templateUrl: './image-slider.component.html',
-  styleUrls: ['./image-slider.component.css']
+  styleUrls: ['./image-slider.component.css'],
+  // 脏值检测  定义在某个组件里面,只会跑对呀的数 检测自己模块的
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageSliderComponent
  implements

@@ -1,4 +1,10 @@
-import { AfterContentInit, Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { AfterContentInit,
+        ChangeDetectionStrategy,
+        Component, EventEmitter,
+        Input, OnChanges,
+        OnDestroy, OnInit,
+        Output,
+        SimpleChanges } from '@angular/core';
 
 // 接口
 export interface TopMenu {
@@ -10,7 +16,9 @@ export interface TopMenu {
 @Component({
   selector: 'app-scrollable-tab',
   templateUrl: './scrollable-tab.component.html',
-  styleUrls: ['./scrollable-tab.component.css']
+  styleUrls: ['./scrollable-tab.component.css'],
+  // 脏值检测的Onpush input有东西变化 就会触发
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class ScrollableTabComponent

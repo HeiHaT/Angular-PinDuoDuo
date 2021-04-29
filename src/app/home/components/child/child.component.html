@@ -1,0 +1,11 @@
+<!-- 绑定方法 -->
+<span [textContent]= "time | date: 'HH:mm:ss:SS' "></span>
+
+<!-- 第二种应用方法 -->
+<span #timeRef></span>
+<br/>
+<p>
+  child works!
+</p>
+<br/>
+<button (click)="handleClick()">触发脏值检查</button>

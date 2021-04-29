@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home';
 import { SharedModule } from './shared/shared.module';
-
+import { HttpClientModule } from '@angular/common/http';
 // 导入中文文件
 import localZh from '@angular/common/locales/zh-Hans';
 import { registerLocaleData } from '_@angular_common@11.2.11@@angular/common';
@@ -18,7 +18,8 @@ import { registerLocaleData } from '_@angular_common@11.2.11@@angular/common';
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    HttpClientModule
   ],
   providers: [
     {

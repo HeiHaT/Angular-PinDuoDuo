@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Channel, ImageSlider, TopMenu } from 'src/app/shared';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root',
     // providedIn: HomeService,
 })
 export class HomeService {
+  constructor(private http: HttpClient) {}
     topMenus: TopMenu[] = [{
         title: '热门',
         link: 'hot',
@@ -223,5 +226,25 @@ export class HomeService {
       // tslint:disable-next-line:typedef
       getBanners() {
           return this.sliders;
+      }
+
+      // 请求方式改写
+      // tslint:disable-next-line:typedef
+      getTabs1() {
+        return this.http.get<TopMenu[]>(`${environment.baseUrl} / banners`, {
+          params: {icode: `${environment.icode}`}
+        });
+      }
+      // tslint:disable-next-line:typedef
+      getChannels2() {
+        return this.http.get(`${environment.baseUrl} / channels`, {
+          params: {icode: `${environment.icode}`}
+        });
+      }
+     // tslint:disable-next-line:typedef
+      getBanners2() {
+        return this.http.get(`${environment.baseUrl} / tabs`, {
+          params: {icode: `${environment.icode}`}
+        });
       }
 }

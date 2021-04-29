@@ -1,0 +1,12 @@
+GET https://api.muxiaoguo.cn/api/xiaohua/ HTTP/1.1
+
+###
+# 可以请求接口  只有以http结尾的就可以操作.
+POST https://api.muxiaoguo.cn/api/ACG?type=json&size=mw690 HTTP/1.1
+Content-Type: : application/json
+
+####课程API
+GET https://apis.imooc.com/api
+
+###
+GET {{{host}}}/banners?icode={{iCode}} HTTP/1.1

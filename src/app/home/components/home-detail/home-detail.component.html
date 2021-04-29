@@ -30,3 +30,15 @@
 <ng-template #other>
     This page hasn't been written yet
 </ng-template>
+<a  [routerLink]="['grand']"
+    routerLinkActive="active"
+    [queryParams]= "{ name: '张三'}"
+  >Link to grand</a>
+<router-outlet></router-outlet>
+
+
+<a  [routerLink]="[{ outlets: {second: ['aux']} }]"
+  >Link to second</a>
+<router-outlet name="second"></router-outlet>
+
+

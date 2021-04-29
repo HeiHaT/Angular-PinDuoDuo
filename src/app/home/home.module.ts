@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { HomeContainerComponent, HomeDetailComponent } from './components';
+import { HomeAuxComponent, HomeContainerComponent, HomeDetailComponent, HomeGrandComponent } from './components';
 import { HomeRoutingModule } from './home-routing.module';
 
 
@@ -8,6 +8,8 @@ import { HomeRoutingModule } from './home-routing.module';
   declarations: [
     HomeContainerComponent,
     HomeDetailComponent,
+    HomeGrandComponent,
+    HomeAuxComponent
   ],
   imports: [
     SharedModule,

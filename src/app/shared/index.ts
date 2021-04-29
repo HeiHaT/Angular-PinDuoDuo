@@ -2,3 +2,4 @@
 export * from './components';
 export * from './components/decorators';
 export * from './directives';
+export * from './pipes';

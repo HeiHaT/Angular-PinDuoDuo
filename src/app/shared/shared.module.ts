@@ -13,6 +13,8 @@ import {
   GridItemTitleDirective
  } from './directives';
 
+import { AgoPipe } from './pipes';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import {
     HorizontalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    AgoPipe
   ],
   imports: [
     CommonModule
@@ -33,7 +36,8 @@ import {
     HorizontalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    AgoPipe
   ]
 })
 export class SharedModule { }

@@ -14,3 +14,10 @@
     overscroll-behavior-y: contain;
     height: calc(100% - 3rem);
   }
+
+app-scrollable-tab{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 88888;
+  }

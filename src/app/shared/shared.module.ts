@@ -5,6 +5,8 @@ import {
     ScrollableTabComponent,
     HorizontalGridComponent,
     FooterComponent,
+    VerticalGridComponent,
+    ProductCardComponent,
 } from './components';
 
 //
@@ -26,6 +28,8 @@ import { AgoPipe } from './pipes';
     GridItemImageDirective,
     GridItemTitleDirective,
     FooterComponent,
+    VerticalGridComponent,
+    ProductCardComponent,
     AgoPipe
   ],
   imports: [
@@ -40,6 +44,8 @@ import { AgoPipe } from './pipes';
     GridItemImageDirective,
     GridItemTitleDirective,
     FooterComponent,
+    ProductCardComponent,
+    VerticalGridComponent,
     AgoPipe
   ]
 })

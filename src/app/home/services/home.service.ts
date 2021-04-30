@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Channel, ImageSlider, TopMenu } from 'src/app/shared';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Ad, Product } from 'src/app/shared/domain';
 
 @Injectable({
     providedIn: 'root',
@@ -230,7 +231,18 @@ export class HomeService {
           // return this.sliders;
           return this.http.get<ImageSlider[]>(' http://39.106.75.209/api/banners ');
       }
-
+      // tslint:disable-next-line:typedef
+      getAdByTab(tab: string){
+        return this.http.get<Ad[]>('http://39.106.75.209/api/ads', {
+          params: { categories_like: tab }
+        });
+      }
+      // tslint:disable-next-line:typedef
+      getProductsByTab(tab: string) {
+        return this.http.get<Product[]>('http://39.106.75.209/api/products', {
+          params: { categories_like: tab }
+        });
+      }
       // 请求方式改写
       // tslint:disable-next-line:typedef
       getTabs1() {

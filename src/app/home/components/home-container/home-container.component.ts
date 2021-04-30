@@ -26,11 +26,10 @@ export class HomeContainerComponent implements OnInit {
     selectedTabLink$: Observable<string>;
     ngOnInit(): void {
       this.selectedTabLink$ = this.route.firstChild.paramMap.pipe(
-        filter(params => params.has('tabLink')),
-        map(params => params.get('tabLink'))
+        filter(params => params.has('tablink')),
+        map(params => params.get('tablink'))
       );
       console.log(this.selectedTabLink$);
-      alert(this.selectedTabLink$);
       // this.topMenus = this.service.getTabs();
       // 展示异步方法
       this.service.getTabs().subscribe( tabs => { this.topMenus = tabs; });

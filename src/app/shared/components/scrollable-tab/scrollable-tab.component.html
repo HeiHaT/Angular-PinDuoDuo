@@ -1,15 +1,18 @@
 
 
-<ul >
-    <li *ngFor="let item of menus;let i = index">
+<ul [ngStyle]="{'background-color': backgroundColor}">
+    <li *ngFor="let menu of menus;let i = index">
         <a
         (click)="handleSelection(i)"
         [ngStyle]="{ color: i === selectIndex ? potforColor : titlecolor }"
         >
-        {{item.title}}
+        {{menu.title}}
         </a>
-        <span class="indicator" *ngIf="i === selectIndex"></span>
+        <span
+        class="indicator"
+        *ngIf=" menu.link == selectedTabLink"
+        [ngStyle]="{ 'background-color': titlecolor }"></span>
     </li>
 </ul>
-<!-- ul 里面的 [ngStyle]="{ 'background-color': backgroundColor }" -->
+<!-- ul 里面的 -->
 <ng-content></ng-content>

@@ -40,16 +40,17 @@ export class HorizontalGridComponent implements OnInit {
   }
 
   public get templateRows(): string {
-    return  `minmax(auto, max-content)`;
+    return `minmax(auto, max-content)`;
   }
   public get templateColumns(): string {
-       return  `repeat(${this.cols}, calc((100vw - ${this.dispalyCols * 0.4}rem)/
-       ${this.dispalyCols}))`;
+    return `repeat(${this.cols}, calc((100vw - ${this.dispalyCols *
+      0.4}rem) / ${this.dispalyCols}))`;
   }
 
   // tslint:disable-next-line:typedef
-  handleScroll(event){
-     this.sliderMargin = `0 ${100 * event.target.scrollLeft / event.target.scrollWidht}%`;
+  handleScroll(ev){
+    this.sliderMargin = `0 ${(100 * ev.target.scrollLeft) /
+      ev.target.scrollWidth}%`;
   }
 }
 

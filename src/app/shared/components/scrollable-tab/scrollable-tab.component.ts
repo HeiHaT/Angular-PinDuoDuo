@@ -30,10 +30,11 @@ export class ScrollableTabComponent
 {
   selectIndex = -1;
   title = '拼多多';
+  @Input() selectedTabLink: string;
   @Input() menus: TopMenu[] =  [];
   @Input() backgroundColor = '';
   @Input() potforColor = '#fff';
-  @Input() titlecolor = '#000';
+  @Input() titlecolor = 'red';
   @Output() tabSelected = new EventEmitter(); // 事件发射器
   // 构造函数永远首先被调用
   constructor() {
@@ -70,6 +71,7 @@ export class ScrollableTabComponent
   // tslint:disable-next-line:typedef
   handleSelection(index: number) {
     this.selectIndex = index;
-    this.tabSelected.emit(this.menus[this.selectIndex]);
+    // this.selectedTabLink = index;
+    this.tabSelected.emit(this.menus[index]);
   }
 }

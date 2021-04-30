@@ -3,6 +3,7 @@
     [backgroundColor]="scrollableTabagColor"
     [potforColor]="'red'"
     [titlecolor]="'gold'"
+    [selectedTabLink]=" selectedTabLink$ | async"
     (tabSelected)="handleTabSelected($event)"
 >
 </app-scrollable-tab>

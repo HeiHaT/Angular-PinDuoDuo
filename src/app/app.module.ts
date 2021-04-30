@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 // 导入中文文件
 import localZh from '@angular/common/locales/zh-Hans';
 import { registerLocaleData } from '_@angular_common@11.2.11@@angular/common';
+import { RecommendModule } from './recommend';
+import { MyModule } from './my';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { registerLocaleData } from '_@angular_common@11.2.11@@angular/common';
     SharedModule,
     AppRoutingModule,
     HomeModule,
-    HttpClientModule
+    HttpClientModule,
+    RecommendModule,
+    MyModule,
   ],
   providers: [
     {

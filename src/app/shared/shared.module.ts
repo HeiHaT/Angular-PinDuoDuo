@@ -4,6 +4,7 @@ import {
     ImageSliderComponent,
     ScrollableTabComponent,
     HorizontalGridComponent,
+    FooterComponent,
 } from './components';
 
 //
@@ -24,6 +25,7 @@ import { AgoPipe } from './pipes';
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
+    FooterComponent,
     AgoPipe
   ],
   imports: [
@@ -37,6 +39,7 @@ import { AgoPipe } from './pipes';
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
+    FooterComponent,
     AgoPipe
   ]
 })

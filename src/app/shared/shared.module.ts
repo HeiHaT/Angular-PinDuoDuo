@@ -17,6 +17,10 @@ import {
  } from './directives';
 
 import { AgoPipe } from './pipes';
+import { TagDirective } from './directives/tag.directive';
+import { AvatarDirective } from './directives/avatar.directive';
+import { ProductRoutingModule } from '../product/product-routing.module';
+import { ProductTileComponent } from './components/product-tile';
 
 
 @NgModule({
@@ -30,6 +34,9 @@ import { AgoPipe } from './pipes';
     FooterComponent,
     VerticalGridComponent,
     ProductCardComponent,
+    ProductTileComponent,
+    TagDirective,
+    AvatarDirective,
     AgoPipe
   ],
   imports: [
@@ -45,7 +52,10 @@ import { AgoPipe } from './pipes';
     GridItemTitleDirective,
     FooterComponent,
     ProductCardComponent,
+    ProductTileComponent,
     VerticalGridComponent,
+    TagDirective,
+    AvatarDirective,
     AgoPipe
   ]
 })

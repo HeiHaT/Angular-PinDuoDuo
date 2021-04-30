@@ -22,9 +22,9 @@ export class HomeContainerComponent implements OnInit {
     topMenus: TopMenu[] = [];
     color: 'red';
     ngOnInit(): void{
-      this.topMenus = this.service.getTabs();
+      // this.topMenus = this.service.getTabs();
       // 展示异步方法
-      // this.service.getTabs1().subscribe( tabs => { this.topMenus = tabs; });
+      this.service.getTabs().subscribe( tabs => { this.topMenus = tabs; });
       // 打印services传过来的token
       console.log(this.baserUrl2);
     }

@@ -27,8 +27,11 @@ export class HomeDetailComponent implements OnInit {
       console.log('查询参数:', params);
     });
     // 获取servers 里面返回的值
-    this.sliders = this.server.getBanners();
-    this.channels = this.server.getChannels();
+    // this.sliders = this.server.getBanners();
+    // this.channels = this.server.getChannels();
+    // 请求方式
+    this.server.getBanners().subscribe( tabs => { this.sliders = tabs; });
+    this.server.getChannels().subscribe( tabs => { this.channels = tabs; });
 
   }
 

@@ -217,15 +217,18 @@ export class HomeService {
       ];
       // tslint:disable-next-line:typedef
       getTabs() {
-          return this.topMenus;
+          // return this.topMenus;
+          return this.http.get<TopMenu[]>('http://39.106.75.209/api/tabs');
       }
       // tslint:disable-next-line:typedef
       getChannels() {
-          return this.channels;
+          // return this.channels;
+          return this.http.get<[Channel]>(' http://39.106.75.209/api/channels');
       }
       // tslint:disable-next-line:typedef
       getBanners() {
-          return this.sliders;
+          // return this.sliders;
+          return this.http.get<ImageSlider[]>(' http://39.106.75.209/api/banners ');
       }
 
       // 请求方式改写

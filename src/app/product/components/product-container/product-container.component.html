@@ -2,7 +2,7 @@
 <ng-container *ngIf="variants$ | async as productVariants">
   <app-image-slider
     [sliders]="productVariants[selectedIndex].productVariantImages"
-    [sliderHeight]="'22rem'"
+    [sliderHeight]="'20rem'"
     [intervalBySeconds]="0"
   >
   </app-image-slider>
@@ -40,7 +40,8 @@
       <span>•</span>
       <span>假一赔十</span>
     </div>
-    <app-group-short-list class="group-short-list"></app-group-short-list>
+    <app-group-short-list class="group-short-list">
+    </app-group-short-list>
   </div>
   <div class="toolbar">
     <div class="icon-button">

@@ -31,7 +31,7 @@ export class ImageSliderComponent
  {
 
   @Input() sliders: ImageSlider[] = [];
-  @Input() scrollHeight = '160px';
+  @Input() sliderHeight = '160px';
   selectedIndex = 0;
   intervalId;
   @Input() intervalByseconds = 2;
@@ -49,6 +49,9 @@ export class ImageSliderComponent
     // this.imgs.forEach(item => {
     //   // this.rd2.setStyle(item.nativeElement, 'height', '200px');
     // });
+    if (this.intervalByseconds <= 0) {
+      return;
+    }
     this.intervalId = setInterval(() => {
       // tslint:disable-next-line:max-line-length
       this.rd2.setProperty(

@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-// import { MyService } from '../../services';
-// import { Observable } from 'rxjs';
-// import { Profile } from '../../domain';
+import { MyService } from '../../services';
+import { Observable } from 'rxjs';
+import { Profile } from '../../domain';
 
 @Component({
   selector: 'app-my-container',
@@ -11,11 +11,11 @@ import { Router, ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MyContainerComponent implements OnInit {
-  // profile$: Observable<Profile>;
+  profile$: Observable<Profile>;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    // private service: MyService
+    private service: MyService
   ) {}
   orderItems = [
     {
@@ -64,7 +64,7 @@ export class MyContainerComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    // this.profile$ = this.service.getProfile();
+    this.profile$ = this.service.getProfile();
   }
 
   // tslint:disable-next-line:typedef

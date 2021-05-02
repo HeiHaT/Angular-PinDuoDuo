@@ -1,59 +1,63 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-    ImageSliderComponent,
     ScrollableTabComponent,
+    ImageSliderComponent,
     HorizontalGridComponent,
+    CountDownComponent,
     FooterComponent,
     VerticalGridComponent,
     ProductCardComponent,
+    ProductTileComponent,
+    BackButtonComponent
 } from './components';
 
 //
 import {
   GridItemDirective,
   GridItemImageDirective,
-  GridItemTitleDirective
+  GridItemTitleDirective,
+  TagDirective,
+  AvatarDirective
  } from './directives';
 
 import { AgoPipe } from './pipes';
-import { TagDirective } from './directives/tag.directive';
-import { AvatarDirective } from './directives/avatar.directive';
-import { ProductRoutingModule } from '../product/product-routing.module';
-import { ProductTileComponent } from './components/product-tile';
-
+import { DialogModule } from '../dialog';
 
 @NgModule({
   declarations: [
     ScrollableTabComponent,
     ImageSliderComponent,
     HorizontalGridComponent,
-    GridItemDirective,
-    GridItemImageDirective,
-    GridItemTitleDirective,
+    CountDownComponent,
     FooterComponent,
     VerticalGridComponent,
     ProductCardComponent,
     ProductTileComponent,
+    BackButtonComponent,
+    GridItemDirective,
+    GridItemImageDirective,
+    GridItemTitleDirective,
     TagDirective,
     AvatarDirective,
     AgoPipe
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [
     CommonModule,
+    DialogModule,
     ScrollableTabComponent,
     ImageSliderComponent,
     HorizontalGridComponent,
+    CountDownComponent,
+    FooterComponent,
+    VerticalGridComponent,
+    ProductCardComponent,
+    ProductTileComponent,
+    BackButtonComponent,
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
-    FooterComponent,
-    ProductCardComponent,
-    ProductTileComponent,
-    VerticalGridComponent,
     TagDirective,
     AvatarDirective,
     AgoPipe

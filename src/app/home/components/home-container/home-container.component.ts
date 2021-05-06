@@ -38,7 +38,7 @@ export class HomeContainerComponent implements OnInit {
     }
     // tslint:disable-next-line:typedef
     handleTabSelected(topMenus: TopMenu){
-      const colors = ['green', 'blue', 'black', 'red', 'pink'];
+      const colors = ['white', 'green', 'blue', 'black', 'red', 'pink', 'orange'];
       const idx = Math.floor(Math.random() * 2);
       this.scrollableTabagColor = colors[idx];
       console.log(topMenus);

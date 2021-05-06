@@ -54,6 +54,7 @@ export class ImageSliderComponent
     }
     this.intervalId = setInterval(() => {
       // tslint:disable-next-line:max-line-length
+      // console.log(this.rd2);
       this.rd2.setProperty(
           this.imageSlider.nativeElement,
           'scrollLeft',

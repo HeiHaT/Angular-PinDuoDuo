@@ -13,6 +13,7 @@ export class DialogService {
     @Inject(DOCUMENT) private document: Document
   ) {}
 
+  // tslint:disable-next-line:typedef
   open(component: Type<any>, config: ChildConfig) {
     this.domService.appendComponentTo(this.dialogElementId, component, config);
     if (config.position) {
@@ -26,24 +27,29 @@ export class DialogService {
     this.data$.next(null);
   }
 
+  // tslint:disable-next-line:typedef
   close() {
     this.domService.removeComponent();
     this.toggleAll();
   }
 
+  // tslint:disable-next-line:typedef
   saveData(data: object | null) {
     this.data$.next(data);
   }
 
+  // tslint:disable-next-line:typedef
   getData() {
     return this.data$.asObservable();
   }
 
+  // tslint:disable-next-line:typedef
   private toggleAll() {
     this.toggleVisibility(this.document.getElementById(this.dialogElementId));
     this.toggleVisibility(this.document.getElementById(this.overlayElementId));
   }
 
+  // tslint:disable-next-line:typedef
   private toggleVisibility(element: HTMLElement) {
     if (element.classList.contains('show')) {
       element.classList.remove('show');

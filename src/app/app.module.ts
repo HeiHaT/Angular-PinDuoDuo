@@ -14,6 +14,7 @@ import { MyModule } from './my';
 import { ProductModule } from './product';
 
 @NgModule({
+  // 自己设置的组件放入的地方 别人的不能放  记住记住记住
   declarations: [
     AppComponent
   ],

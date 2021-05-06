@@ -35,6 +35,7 @@ export class DomService {
   /**
    * appendComponentTo
    */
+  // tslint:disable-next-line:typedef
   public appendComponentTo(
     parentId: string,
     child: Type<any>,
@@ -55,6 +56,7 @@ export class DomService {
   /**
    * attachConfig
    */
+  // tslint:disable-next-line:typedef
   public attachConfig(config: ChildConfig, componentRef: ComponentRef<any>) {
     const inputs = config.inputs;
     const outputs = config.outputs;
@@ -75,6 +77,7 @@ export class DomService {
   /**
    * removeComponent
    */
+  // tslint:disable-next-line:typedef
   public removeComponent() {
     this.appRef.detachView(this.childComponentRef.hostView);
   }

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 import { filter, map, switchMap } from 'rxjs/operators';
 import { Channel, ImageSlider } from 'src/app/shared';
 import { Ad, Product } from 'src/app/shared/domain';
-import { ActivatedRoute } from '_@angular_router@11.2.11@@angular/router';
+import { ActivatedRoute, Router } from '_@angular_router@11.2.11@@angular/router';
 import { Observable, Subscription } from '_rxjs@6.6.7@rxjs';
 import { HomeService } from '../../services';
 
@@ -15,7 +15,7 @@ import { HomeService } from '../../services';
 })
 export class HomeDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private service: HomeService, private cd: ChangeDetectorRef) { }
+  constructor(private route: ActivatedRoute, private service: HomeService, private router: Router, private cd: ChangeDetectorRef) { }
   selectedTabLink$: Observable<string>;
   sliders$: Observable<ImageSlider[]>;
   channels$: Observable<Channel[]>;
@@ -40,6 +40,11 @@ export class HomeDetailComponent implements OnInit {
       switchMap(tab => this.service.getProductsByTab(tab))
     );
     console.log(this.ad$);
+  }
+  // tslint:disable-next-line:typedef
+  handleTabSelected(link){
+    // 跳转
+    this.router.navigate(['home', link]);
   }
 
 }

@@ -12,6 +12,7 @@ import { registerLocaleData } from '_@angular_common@11.2.11@@angular/common';
 import { RecommendModule } from './recommend';
 import { MyModule } from './my';
 import { ProductModule } from './product';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   // 自己设置的组件放入的地方 别人的不能放  记住记住记住
@@ -32,7 +33,11 @@ import { ProductModule } from './product';
     {
       provide: LOCALE_ID,
       useValue: 'zh-Hans'
-    }
+    },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
   ],
   bootstrap: [AppComponent]
 })

@@ -218,48 +218,65 @@ export class HomeService {
       ];
       // tslint:disable-next-line:typedef
       getTabs() {
-          // return this.topMenus;
-          return this.http.get<TopMenu[]>('http://39.106.75.209/api/tabs');
+          // return this.topMenus; 'http://39.106.75.209/api/tabs'
+          return this.http.get<TopMenu[]>(`${environment.baseUrl}/tabs`);
       }
       // tslint:disable-next-line:typedef
       getChannels() {
-          // return this.channels;
-          return this.http.get<[Channel]>(' http://39.106.75.209/api/channels');
+          // return this.channels; ' http://39.106.75.209/api/channels'
+          return this.http.get<[Channel]>(`${environment.baseUrl}/channels`);
       }
       // tslint:disable-next-line:typedef
       getBanners() {
-          // return this.sliders;
-          return this.http.get<ImageSlider[]>(' http://39.106.75.209/api/banners ');
+          // return this.sliders; ' http://39.106.75.209/api/banners '
+          return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`);
       }
-      // tslint:disable-next-line:typedef
+      // tslint:disable-next-line:typedef 'http://39.106.75.209/api/ads'
       getAdByTab(tab: string){
-        return this.http.get<Ad[]>('http://39.106.75.209/api/ads', {
+        return this.http.get<Ad[]>(`${environment.baseUrl}/ads`, {
           params: { categories_like: tab }
         });
       }
-      // tslint:disable-next-line:typedef
+      // tslint:disable-next-line:typedef 'http://39.106.75.209/api/products'
       getProductsByTab(tab: string) {
-        return this.http.get<Product[]>('http://39.106.75.209/api/products', {
+        return this.http.get<Product[]>(`${environment.baseUrl}/products`, {
           params: { categories_like: tab }
         });
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       // 请求方式改写
       // tslint:disable-next-line:typedef
-      getTabs1() {
-        return this.http.get<TopMenu[]>(`${environment.baseUrl} / banners`, {
-          params: {icode: `${environment.icode}`}
-        });
-      }
-      // tslint:disable-next-line:typedef
-      getChannels2() {
-        return this.http.get(`${environment.baseUrl} / channels`, {
-          params: {icode: `${environment.icode}`}
-        });
-      }
-     // tslint:disable-next-line:typedef
-      getBanners2() {
-        return this.http.get(`${environment.baseUrl} / tabs`, {
-          params: {icode: `${environment.icode}`}
-        });
-      }
+    //   getTabs1() {
+    //     return this.http.get<TopMenu[]>(`${environment.baseUrl} / banners`, {
+    //       params: {icode: `${environment.icode}`}
+    //     });
+    //   }
+    //   // tslint:disable-next-line:typedef
+    //   getChannels2() {
+    //     return this.http.get(`${environment.baseUrl} / channels`, {
+    //       params: {icode: `${environment.icode}`}
+    //     });
+    //   }
+    //  // tslint:disable-next-line:typedef
+    //   getBanners2() {
+    //     return this.http.get(`${environment.baseUrl} / tabs`, {
+    //       params: {icode: `${environment.icode}`}
+    //     });
+    //   }
 }

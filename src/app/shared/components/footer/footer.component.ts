@@ -42,8 +42,8 @@ export class FooterComponent implements OnInit {
     }
   ];
   @Input() selectedIndex = 0;
-  // tslint:disable-next-line:typedef
-  toggleSelected(idx: number) {
+
+  toggleSelected(idx: number): void {
     this.selectedIndex = idx;
     this.tabSelected.emit(this.tabItems[this.selectedIndex]);
   }

@@ -55,11 +55,9 @@ export class ConfirmOrderComponent implements OnInit {
     );
   }
 
-  // tslint:disable-next-line:typedef
-  handleAmountChange(count: number) {
+  handleAmountChange(count: number): any {
     this.count$.next(count);
   }
 
-  // tslint:disable-next-line:typedef
-  handlePay() {}
+  handlePay(): void {}
 }

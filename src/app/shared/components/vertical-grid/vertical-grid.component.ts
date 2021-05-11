@@ -19,15 +19,13 @@ export class VerticalGridComponent implements OnInit {
 
   ngOnInit(): void {}
   /* 响应式布局网格，auto-fill 用来在空间足够时尽可能的填充该位置，minmax 是最小和最大的宽度 */
-  // tslint:disable-next-line:typedef
-  get templateRows() {
+  get templateRows(): any {
     return `minmax(auto-fill, ${this.itemHeight})`;
   }
   /**
    * CSS Grid Layout 的模版列表达式
    */
-  // tslint:disable-next-line:typedef
-  get templateColumns() {
+  get templateColumns(): any {
     return `repeat(auto-fill, minmax(${this.itemWidth}, 1fr))`;
   }
 }

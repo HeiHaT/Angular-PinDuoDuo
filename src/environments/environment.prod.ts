@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://apis.imooc.com/api',
+  baseUrl: 'http://39.106.75.209/api',
   icode: 'xxxx'
 };

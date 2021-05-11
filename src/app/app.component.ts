@@ -11,6 +11,7 @@ import { filter, map } from 'rxjs/operators';
 })
 
 export class AppComponent implements OnInit {
+
   selectedIndex$: Observable<number>;
   // 声明流
   constructor(private router: Router) {}
@@ -25,12 +26,11 @@ export class AppComponent implements OnInit {
       map(tab => this.getSelectedIndex(tab))
     );
   }
-  // tslint:disable-next-line:typedef
-  handleTabSelect(tab: TabItem) {
+  handleTabSelect(tab: TabItem): void {
     this.router.navigate([tab.link]);
   }
-  // tslint:disable-next-line:typedef
-  getSelectedIndex(tab: string) {
+
+  getSelectedIndex(tab: string): any {
     return tab === 'recommend'
       ? 1
       : tab === 'category'
@@ -41,8 +41,7 @@ export class AppComponent implements OnInit {
       ? 4
       : 0;
   }
-  // tslint:disable-next-line:typedef
-  removeDialog() {
+  removeDialog(): any {
     // this.dialogService.close();
   }
 }

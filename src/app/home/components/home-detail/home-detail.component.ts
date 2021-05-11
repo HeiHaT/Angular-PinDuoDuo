@@ -41,8 +41,7 @@ export class HomeDetailComponent implements OnInit {
     );
     console.log(this.ad$);
   }
-  // tslint:disable-next-line:typedef
-  handleTabSelected(link){
+  handleTabSelected(link): void{
     // 跳转
     this.router.navigate(['home', link]);
   }

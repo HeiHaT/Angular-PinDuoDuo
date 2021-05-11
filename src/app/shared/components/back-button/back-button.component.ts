@@ -18,15 +18,13 @@ export class BackButtonComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // tslint:disable-next-line:typedef
-  get imageUrl() {
+  get imageUrl(): string {
     return this.float
       ? `assets/icons/back_light.png`
       : `assets/icons/back_dark.png`;
   }
 
-  // tslint:disable-next-line:typedef
-  handleBack() {
+  handleBack(): void {
     this.location.back();
   }
 }

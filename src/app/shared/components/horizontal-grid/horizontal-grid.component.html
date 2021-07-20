@@ -3,7 +3,7 @@
 <!-- 上面代码演示的是注解 -->
 
 <div class="container"
-  [ngStyle]="{'grid-template-rows': templateRows,'grid-template-columns': templateColumns}"
+     [ngStyle]="{'grid-template-rows': templateRows,'grid-template-columns': templateColumns}"
     (scroll)= "handleScroll($event)"
     >
     <ng-content select="[appGridItem]"></ng-content>

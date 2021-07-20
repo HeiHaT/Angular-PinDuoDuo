@@ -24,8 +24,18 @@ const routes: Routes = [
           {
             path: 'grand',
             component: HomeGrandComponent
+          },
+          {
+            path: 'change-detection',
+            pathMatch: 'full',
+            component: HomeGrandComponent
           }
         ]
+      },
+      {
+        path: 'change-detection',
+        pathMatch: 'full',
+        component: HomeGrandComponent
       }
     ]
   },

@@ -8,7 +8,6 @@ export class GridItemImageDirective implements OnInit {
     @Input() fiMode = 'cover';
     constructor(private elr: ElementRef, private rd2: Renderer2){
     }
-    // tslint:disable-next-line:use-lifecycle-interface
     ngOnInit(): void {
         this.rd2.setStyle(this.elr.nativeElement, 'grid-area', 'image');
         this.rd2.setStyle(this.elr.nativeElement, 'width', this.appGridItemImage);
@@ -17,8 +16,7 @@ export class GridItemImageDirective implements OnInit {
     }
 
     @HostListener('click', ['$event.target'])
-    // tslint:disable-next-line:typedef
-    handleClick(ev) {
+    handleClick(ev): void {
         console.log(ev);
     }
 }

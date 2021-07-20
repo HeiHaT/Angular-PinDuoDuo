@@ -28,8 +28,8 @@ export class HorizontalGridComponent implements OnInit {
   constructor() { }
 
   @Confirmable('您确定要执行么？')
-  // tslint:disable-next-line:typedef
-  handleClick() {
+
+  handleClick(): void {
     console.log('点击已执行！');
   }
   ngOnInit(): void {
@@ -47,8 +47,7 @@ export class HorizontalGridComponent implements OnInit {
       0.4}rem) / ${this.dispalyCols}))`;
   }
 
-  // tslint:disable-next-line:typedef
-  handleScroll(ev){
+  handleScroll(ev): void{
     this.sliderMargin = `0 ${(100 * ev.target.scrollLeft) /
       ev.target.scrollWidth}%`;
   }

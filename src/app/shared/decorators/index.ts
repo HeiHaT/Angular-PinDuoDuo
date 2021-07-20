@@ -1,5 +1,4 @@
-// tslint:disable-next-line:typedef
-export function Emoji() {
+export function Emoji(): any{
     return (target: object, key: string) => {
         let val = target[key];
 
@@ -22,8 +21,7 @@ export function Emoji() {
 
 
 // 自定义第二个
-// tslint:disable-next-line:typedef
-export function  Confirmable(message: string){
+export function  Confirmable(message: string): any{
     return (target: object, key: string, descriptor: PropertyDescriptor) => {
       const original = descriptor.value;
       // tslint:disable-next-line:typedef

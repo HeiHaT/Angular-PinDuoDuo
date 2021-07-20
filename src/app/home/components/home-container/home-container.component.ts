@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { ImageSliderComponent, TopMenu } from 'src/app/shared';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HomeService, token } from '../../services';
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   templateUrl: './home-container.component.html',
   styleUrls: ['./home-container.component.css']
 })
-export class HomeContainerComponent implements OnInit {
+export class HomeContainerComponent implements OnInit, AfterViewInit {
 
   constructor(
     private router: Router,
@@ -36,8 +36,7 @@ export class HomeContainerComponent implements OnInit {
       // 打印services传过来的token
       console.log(this.baserUrl2);
     }
-    // tslint:disable-next-line:typedef
-    handleTabSelected(topMenus: TopMenu){
+    handleTabSelected(topMenus: TopMenu): any{
       const colors = ['white', 'green', 'blue', 'black', 'red', 'pink', 'orange'];
       const idx = Math.floor(Math.random() * 2);
       this.scrollableTabagColor = colors[idx];
@@ -45,7 +44,8 @@ export class HomeContainerComponent implements OnInit {
       // 跳转
       this.router.navigate(['home', topMenus.link]);
     }
-    // tslint:disable-next-line:use-lifecycle-interface
+
+
     ngAfterViewInit(): void {
      console.log('ngAfterViewInit', this.imageSlider);
     }
